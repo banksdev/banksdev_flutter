@@ -1,4 +1,5 @@
 import 'package:banksdev_flutter/components/random_text.dart';
+import 'package:banksdev_flutter/components/repo/repo_list.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -15,16 +16,8 @@ class MainPage extends StatelessWidget {
         ],
       ),
       body: Center(
-          child: Column(
-        children: <Widget>[
-          Text(
-            "Welcome to banksdev",
-            style: TextStyle(
-                color: Colors.amber, fontSize: 58.0, fontFamily: "Raleway"),
-          ),
-          RandomText()
-        ],
-      )),
+        child: RepoList(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
