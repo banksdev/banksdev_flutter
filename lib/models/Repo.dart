@@ -28,9 +28,9 @@ class Repository {
       url: repo['url'],
       updatedAt: repo['updatedAt'],
       pushedAt: repo['pushedAt'],
-      // pullRequests: repo['pullRequests']['edges']['node'],
+      // // pullRequests: repo['pullRequests']['edges']['node'],
       // collaborators: repo['collaborators']['edges']
-      //     .map((item) => Collaborator.fromJson(item)),
+      //     .map((item) => Collaborator.fromJson(item)) as List<Collaborator>,
       // languages: repo['languages'],
     );
   }
