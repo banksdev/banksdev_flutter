@@ -33,47 +33,23 @@ class _RepoList extends State<RepoList> {
         itemCount: repos.length,
         itemBuilder: (BuildContext context, int index) {
           var repo = repos[index];
-          return Card(
-              child: Container(
-            width: 300,
-            height: 100,
-            child: Column(
-              children: <Widget>[
-                Text(repo.name),
-                Text(repo.url),
-              ],
-            ),
-          ));
+          return Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Card(
+                  child: Container(
+                width: 300,
+                height: 100,
+                child: Column(
+                  children: <Widget>[
+                    Text(repo.name),
+                    Text(repo.url),
+                  ],
+                ),
+              )));
         },
       ),
       onRefresh: getPublicRepos,
     )));
-    // return FutureBuilder<List<Repository>>(
-    //     future: getPublicRepos("BBPL"),
-    //     builder: (context, snapshot) {
-    //       if (snapshot.connectionState == ConnectionState.done) {
-    //         var data = snapshot.data;
-    //         return ListView.builder(
-    //           itemCount: data.length - 1,
-    //           itemBuilder: (BuildContext context, int index) {
-    //             var repo = data[index];
-    //             return Card(
-    //                 child: Container(
-    //               width: 300,
-    //               height: 100,
-    //               child: Column(
-    //                 children: <Widget>[
-    //                   Text(repo.name),
-    //                   Text(repo.url),
-    //                 ],
-    //               ),
-    //             ));
-    //           },
-    //         );
-    //       } else {
-    //         return CircularProgressIndicator();
-    //       }
-    //     });
   }
 
   Future<void> getPublicRepos() async {
